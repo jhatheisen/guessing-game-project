@@ -1,1 +1,38 @@
 https://open.appacademy.io/learn/js-py---sep-2022-cohort-1-online/week-3---recursion--iifes--and-asynchronous-js/guessing-game-project--no-starter-
+
+The Objective:
+
+Guessing Game Project
+
+  It's time for our first non-spec guided project!
+There are many projects in the course, some of which will not have test cases for you to run.
+These types of projects will hold your hand less and force you to make design decisions.
+Instead of specs, you will be provided with text instructions and example snippets to guide you.
+In order to end up with a working project, you should analyze these instructions closely.
+If you are stuck or don't understand an instruction, ask a TA for clarification!
+
+The solution for this project is available at the end of these instructions.
+Be sure to give it an honest shot before you take a peek!
+
+The Objective
+
+Our objective for this project is to build a simple game where the user has to guess a secret number that is chosen at random.
+Upon making a guess, the user will receive a hint indicating if their guess is too small or too large.
+Below is an example of how the final product will play.
+We've denoted the user's input with *asterisks*.
+All other text is produced by the computer:
+
+/*
+Enter a max number: *20*
+Enter a min number: *11*
+I'm thinking of a number between 11 and 20...
+Enter a guess: *15*
+Too high.
+Enter a guess: *11*
+Too low.
+Enter a guess: *13*
+Too high.
+Enter a guess: *12*
+Correct!
+YOU WON.
+*/
