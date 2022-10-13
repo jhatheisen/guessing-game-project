@@ -6,6 +6,21 @@ const rl = readline.createInterface({
 });
 
 let secretNumber;
+let numAttempts;
+
+function askLimit(){
+  rl.question("How many turns would you like? ", handleLimit)
+}
+
+function handleLimit(limit){
+  limit = Number(limit)
+  if(isNaN(limit)){
+    console.log("Not A Number!")
+    askLimit()
+  }
+  numAttempts = limit
+  askRange()
+}
 
 function askRange(){
   rl.question('Enter a max number: ', handleMaxNum)
@@ -39,13 +54,21 @@ function randomInRange(min, max){
 }
 
 function askGuess() {
-  rl.question("Enter a guess:", (answer) => {
+  rl.question("Enter a guess: ", (answer) => {
     let correct = checkGuess(answer);
 
+    numAttempts--
+
     if (correct) {
-      console.log("You win!");
+      console.log(`You win! You won in ${5 - numAttempts} attempts!`);
+
       rl.close();
-    } else {
+    } else if(numAttempts === 0){
+      console.log("YOU LOSE!", "The answer was ", secretNumber)
+      rl.close()
+    }
+    else{
+      console.log('Number of attempts left is ', numAttempts)
       askGuess();
     }
   });
@@ -68,4 +91,5 @@ function checkGuess(num) {
   }
 }
 
-askRange()
+// askRange()
+askLimit()
